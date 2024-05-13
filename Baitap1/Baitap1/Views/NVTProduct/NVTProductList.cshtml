@@ -1,0 +1,43 @@
+﻿@Model List<Baitap1.Models.Product>;
+@{
+    ViewBag.Title = "Danh sách món ăn";
+    //var list = ViewBag.list;
+    //var list = Model as List<Baitap1.Models.Product>;
+    int stt = 0;
+}
+
+<h2>Danh sách món ăn</h2>
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Mã số</th>
+                <th>Tên món ăn</th>
+                <th>Đơn vị</th>
+                <th>Giá</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                stt++;
+                <tr>
+                    <td>@stt</td>
+                    <td>@item.ProductId</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.Unit</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <a href="#">Sửa</a>
+                        <a href="#">Xóa</a>
+                        <a href="#">Tìm kiếm</a>
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+</div>
+
